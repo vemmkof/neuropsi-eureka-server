@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:8761}
+spring:
+  application:
+    name: neuropsi-eureka-service
+  security:
+    user:
+      name: ${USERNAME:username}
+      password: ${PASSWORD:password}
+  profiles:
+    active: ${PROFILE:dev}
+eureka:
+  instance:
+    hostname: ${HOSTNAME:localhost}
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: ${EUREKA_URL:http://username:password@localhost:8761}/eureka/
